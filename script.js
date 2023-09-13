@@ -28,8 +28,8 @@ function createGrid() {
       newDiv.id = "gridBox" + (i * GRID_SIZE + j);
       newDiv.style.width = (customWidth / GRID_SIZE) + "px";
       newDiv.style.height = (customHeight / GRID_SIZE) + "px";
-      newDiv.style.border = "hidden";
-      newDiv.style.borderWidth = "1px";
+      newDiv.style.outline = "1px";
+      newDiv.style.outlineStyle = "solid";
 
       document.getElementById(gridRow.id).appendChild(newDiv);
 
