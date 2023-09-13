@@ -15,7 +15,7 @@ function createGrid() {
 
     for (let j = 0; j < GRID_SIZE; j++) {
       let newDiv = document.createElement("div");
-      newDiv.id = "gridBox" + ((i * GRID_SIZE) + j);
+      newDiv.id = "gridBox" + (i * GRID_SIZE + j);
       newDiv.style.width = "30px";
       newDiv.style.height = "30px";
       newDiv.style.border = "solid";
@@ -23,7 +23,9 @@ function createGrid() {
 
       document.getElementById(gridRow.id).appendChild(newDiv);
 
-      document.getElementById(newDiv.id).onmouseover = function() {mouseOver(newDiv.id)};
+      document.getElementById(newDiv.id).onmouseover = function () {
+        mouseOver(newDiv.id);
+      };
     }
   }
 }
