@@ -2,10 +2,9 @@
 This is the fourth project of TOP
 In this project we create a small drawing app.
 
-For starters we implement the app in black and white
-and later on we will be adding colors too.
-
-Best of luck to future me and to everyone doing this!
+Hover over the cells to color them with a random color.
+The UI contains buttons to clear the grid and change the size
+either by some default values OR custom number (by up to 100)
 
 Live demo:
 https://stathis92.github.io/etchasketch/
