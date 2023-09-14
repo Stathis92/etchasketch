@@ -15,7 +15,6 @@ customButtons.forEach((button) => {
   });
 });
 
-
 function createGrid() {
   const gridContainer = document.getElementById("gridContainer");
 
