@@ -1,15 +1,20 @@
 document.body.onload = createGrid;
 
-const clearSketchB = document.getElementById("clear");
-const customSizeB = document.getElementById("custom");
+const findButton = document.getElementById("clear");
 
-customSizeB.addEventListener("click", () => {
-  customSize();
-});
+//
+const customButtons = document.querySelectorAll(".options");
 
-clearSketchB.addEventListener("click", () => {
+findButton.addEventListener("click", () => {
   clearSketch();
 });
+
+customButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    customSize(button.id);
+  });
+});
+
 
 function createGrid() {
   const gridContainer = document.getElementById("gridContainer");
@@ -59,12 +64,8 @@ function mouseOver(position) {
   document.getElementById(position).style.backgroundColor = "#" + randomColor;
 }
 
-function customSize() {
-  let input = prompt("Please enter Grid size (max 100):");
-  while (input > 100 || input < 1 || isNaN(input)) {
-    input = prompt("Please enter Grid size (max 100):");
-  }
-  GRID_SIZE = input;
+function customSize(size) {
+  getSize(size);
   createContainer();
   createGrid();
 }
@@ -84,4 +85,26 @@ function createContainer() {
   oldContainer.remove();
 }
 
+function getSize(size) {
+  switch (size) {
+    case "size1":
+      let input = prompt("Please enter Grid size (max 100):");
+      while (input > 100 || input < 1 || isNaN(input)) {
+        input = prompt("Please enter Grid size (max 100):");
+      }
+      GRID_SIZE = input;
+      break;
+    case "size2":
+      GRID_SIZE = 16;
+      break;
+    case "size3":
+      GRID_SIZE = 32;
+      break;
+    case "size4":
+      GRID_SIZE = 64;
+      break;
+  }
+}
+
+//Initial grid size on page load
 let GRID_SIZE = 16;
