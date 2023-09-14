@@ -9,8 +9,10 @@ setSize.addEventListener("click", () => {
 function createGrid() {
   const gridContainer = document.getElementById("gridContainer");
 
-  gridContainer.style.maxHeight = "480px";
-  gridContainer.style.maxWidth = "480px";
+  gridContainer.style.maxHeight = "960px";
+  gridContainer.style.maxWidth = "960px";
+  gridContainer.style.borderStyle = "solid";
+  gridContainer.style.borderWidth = "5px";
 
   let customHeight = parseInt(gridContainer.style.maxHeight);
   let customWidth = parseInt(gridContainer.style.maxWidth);
