@@ -25,6 +25,8 @@ button {
   background-color: bisque;
   color: rgb(25, 47, 86);
   font-size: 25px;
+
+  touch-action: manipulation;
 }
 
 button:hover {
