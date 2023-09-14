@@ -5,4 +5,36 @@
 
   body {
     background-color: rgb(163, 204, 220);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(
+      90deg,
+      rgba(16, 75, 99, 1) 0%,
+      rgba(21, 121, 162, 1) 50%,
+      rgba(16, 75, 99, 1) 100%
+    );
+  }
+
+  button{
+    margin-top: 50px;
+    height: 150px;
+    width: 150px;
+    border: solid;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: bisque;
+    color: rgb(25, 47, 86);
+
+    font-size: 25px;
+  }
+
+  button:hover{
+    background-color: azure;
+  }
+
+  .title {
+    font-size: 65px;
+    color: rgb(242, 221, 127);
+    margin-top: 45px;
   }
