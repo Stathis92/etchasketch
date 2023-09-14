@@ -6,7 +6,6 @@ setSize.addEventListener("click", () => {
   customSize();
 });
 
-
 function createGrid() {
   const gridContainer = document.getElementById("gridContainer");
 
@@ -26,26 +25,27 @@ function createGrid() {
     for (let j = 0; j < GRID_SIZE; j++) {
       let newDiv = document.createElement("div");
       newDiv.id = "gridBox" + (i * GRID_SIZE + j);
-      newDiv.style.width = (customWidth / GRID_SIZE) + "px";
-      newDiv.style.height = (customHeight / GRID_SIZE) + "px";
+      newDiv.style.width = customWidth / GRID_SIZE + "px";
+      newDiv.style.height = customHeight / GRID_SIZE + "px";
       newDiv.style.outline = "1px";
       newDiv.style.outlineStyle = "solid";
 
       document.getElementById(gridRow.id).appendChild(newDiv);
 
       document.getElementById(newDiv.id).onmouseover = function () {
-        mouseOver(newDiv.id);
+        mouseDown(newDiv.id);
       };
     }
   }
 }
 
-function mouseOver(position) {
-  document.getElementById(position).style.backgroundColor = "black";
+function mouseDown(position) {
+  let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+  document.getElementById(position).style.backgroundColor = "#" + randomColor;
 }
 
-function customSize(){
-  let input = prompt("Please enter Grid size (max 100):" );
+function customSize() {
+  let input = prompt("Please enter Grid size (max 100):");
   GRID_SIZE = input;
   const oldContainer = document.getElementById("gridContainer");
   const newContainer = document.createElement("div");
@@ -55,4 +55,4 @@ function customSize(){
   createGrid();
 }
 
-let GRID_SIZE = 8;
+let GRID_SIZE = 16;
