@@ -1,9 +1,14 @@
 document.body.onload = createGrid;
 
-const setSize = document.querySelector("button");
+const setSize = document.getElementById("reset");
+const clearSktch = document.getElementById("clear");
 
 setSize.addEventListener("click", () => {
   customSize();
+});
+
+clearSktch.addEventListener("click", () => {
+  clearSketch();
 });
 
 function createGrid() {
@@ -49,6 +54,15 @@ function mouseDown(position) {
 function customSize() {
   let input = prompt("Please enter Grid size (max 100):");
   GRID_SIZE = input;
+  const oldContainer = document.getElementById("gridContainer");
+  const newContainer = document.createElement("div");
+  newContainer.id = "gridContainer";
+  document.body.insertBefore(newContainer, oldContainer);
+  oldContainer.remove();
+  createGrid();
+}
+
+function clearSketch() {
   const oldContainer = document.getElementById("gridContainer");
   const newContainer = document.createElement("div");
   newContainer.id = "gridContainer";
